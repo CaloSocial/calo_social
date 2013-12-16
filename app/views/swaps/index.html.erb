@@ -1,0 +1,25 @@
+<% provide(:title, "Swaps") %>
+<h1>Swaps</h1>
+
+<div id="tag_cloud">
+	<% tag_cloud Swap.tag_counts, %w[s m l] do |tag, css_class| %>
+		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	<% end %>
+</div>
+
+<%= search_form_for @search  do |f| %>
+	<div class="field">
+		<%= f.label :description_cont, "Description contains" %>
+		<%= f.text_field :description_cont %>
+	</div>
+	<div class="actions"><%= f.submit "Search" %></div>
+
+<% end %>
+
+
+<!-- Show each user name and its gravatar -->
+<ul class="swaps">
+<!-- ruby automatically looks for a partial called swaps.hrml.erb -->
+      <%= render @swaps %>
+</ul>
+

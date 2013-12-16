@@ -1,0 +1,12 @@
+<% provide(:title, "All users") %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<!-- Show each user name and its gravatar -->
+<ul class="users">
+<!-- ruby automatically looks for a partial called _user.hrml.erb -->
+      <%= render @users %>
+</ul>
+
+<% will_paginate %>

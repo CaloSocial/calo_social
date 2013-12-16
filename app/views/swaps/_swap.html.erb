@@ -1,0 +1,28 @@
+<li>
+  <span class="description"><b><%= swap.description %></b></span>
+  <span class="offer"><b>Offer: </b><%= swap.offer %></span>
+
+  <% if not swap.want.nil? %>
+    <span class="want"><b>Want: </b><%= swap.want %></span>
+  <% end %>
+
+  <% if not swap.place.nil? %>
+    <span class="place">
+      <b>Place: </b> <%= link_to swap.place, 
+                        place_path(:latitude => swap.latitude, 
+                                   :longitude => swap.longitude) %>
+    </span>
+
+  <% end %>
+
+  <span class="tag_list">
+  	<b>Tags: </b> <%= raw swap.tag_list.map { |t| link_to t, 
+  								tag_path(t) }.join(', ') %>
+  </span>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(swap.created_at) %> ago by 
+    <%= link_to swap.user.name, user_path(swap.user) %>
+  </span>
+  
+</li>

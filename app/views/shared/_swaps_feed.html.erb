@@ -1,0 +1,7 @@
+<% if @swaps_feed_items.any? %>
+  <ol class="swaps">
+    <%= render partial: 'shared/swaps_feed_item', 
+    						collection: @swaps_feed_items %>
+  </ol>
+  <%= will_paginate @swaps_feed_items %>
+<% end %>

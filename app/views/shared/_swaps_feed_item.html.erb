@@ -1,0 +1,10 @@
+<li id="swap<%= swaps_feed_item.id %>">
+  <%= link_to gravatar_for(swaps_feed_item.user), swaps_feed_item.user %>
+  <span class="user">
+    <%= link_to swaps_feed_item.user.name, swaps_feed_item.user %>
+  </span>
+  <span class="content"><%= swaps_feed_item.description %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(swaps_feed_item.created_at) %> ago.
+  </span>
+</li>

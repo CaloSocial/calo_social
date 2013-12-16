@@ -1,0 +1,8 @@
+<%= search_form_for Swap.search  do |f| %>
+	<div class="field">
+		<%= f.label :description_cont, "Search Swaps" %>
+		<%= f.text_field :description_cont %>
+	</div>
+	<div class="actions"><%= f.submit "Search", class: "btn btn-medium btn-primary" %></div>
+
+<% end %>

@@ -1,0 +1,48 @@
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4">
+			
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+			
+			<section>
+				<%= render 'shared/stats' %>
+			</section>
+
+			<section>
+				<%= render 'shared/search_form' %>
+			</section>
+
+			<section>
+				<%= render 'shared/micropost_form' %>
+			</section>
+
+			<section>
+				<%= render 'shared/swap_form' %>
+			</section>
+			
+		
+		</aside>
+		<div class="span8">
+			<h3>Micropost Feed</h3>
+			<%= render 'shared/feed' %>
+		</div>
+		<div class="span8">
+			<h3>Swaps in <%= @city %> </h3>
+			<%= render 'shared/swaps_feed' %>
+		</div>
+	</div>
+<% else %>
+<div class="center hero-unit">
+  <h1>Welcome to Calo Social!</h1>
+
+  <h2>
+  	Don't dream about your next adventure, just make it real 
+  </h2>
+
+  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %>
